@@ -1,0 +1,9 @@
+###
+
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+    "sender": "Alice",
+    "message": "This is the content of my second post."
+}
