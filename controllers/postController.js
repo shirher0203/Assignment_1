@@ -13,9 +13,15 @@ const createPost = async (req, res) => {
 
 // Get posts
 const getPosts = async (req, res) => {
+    const filter = req.query;
     try {
-        const posts = await Post.find();
-        res.status(200).json(posts);
+        if(filter.sender){
+            const posts = await Post.find({ sender: filter.sender });
+            return res.status(200).json(posts);
+        } else {
+            const posts = await Post.find();
+            return res.status(200).json(posts);
+        }
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

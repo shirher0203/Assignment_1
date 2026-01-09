@@ -7,7 +7,7 @@ router.post('/', (req, res) => {
     postController.createPost(req, res);
 });
 
-// get all posts
+// get all posts or posts by sender
 router.get('/', (req, res) => {
     postController.getPosts(req, res);
 });
@@ -16,5 +16,6 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     postController.getPostById(req, res);
 });
+
 
 module.exports = router;
