@@ -3,18 +3,15 @@ const router = express.Router();
 const postController = require('../controllers/postController');
 
 // create post
-router.post('/', (req, res) => {
-    postController.createPost(req, res);
-});
+router.post('/', postController.createPost);
 
-// get all posts
-router.get('/', (req, res) => {
-    postController.getPosts(req, res);
-});
+// get all posts or posts by sender
+router.get('/', postController.getPosts);
 
 // get post by id
-router.get('/:id', (req, res) => {
-    postController.getPostById(req, res);
-});
+router.get('/:id', postController.getPostById);
+
+// update post by id
+router.put('/:id', postController.updatePostById);
 
 module.exports = router;
