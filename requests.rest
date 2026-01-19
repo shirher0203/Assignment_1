@@ -1,0 +1,34 @@
+###
+
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+    "sender": "Bob",
+    "message": "Hiii this is my post."
+}
+
+
+###
+
+GET http://localhost:3000/post
+
+
+###
+
+GET http://localhost:3000/post/696123d9d42f01021a805757
+
+
+###
+
+GET http://localhost:3000/post?sender=Bob
+
+
+###
+
+PUT http://localhost:3000/post/696123d9d42f01021a805756
+Content-Type: application/json
+
+{
+    "message": "Updated message content."
+}
