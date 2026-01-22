@@ -8,25 +8,32 @@ Content-Type: application/json
     "message": "Hiii this is my post."
 }
 
+###
+
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+{
+    "sender": "Alice",
+    "message": "This is a comment!!!!",
+    "postId": "696fff7ee600df766246eb8d"
+}
 
 ###
 
 GET http://localhost:3000/post
 
-
 ###
 
-GET http://localhost:3000/post/696123d9d42f01021a805757
-
+GET http://localhost:3000/post/696fff7ee600df766246eb8d
 
 ###
 
 GET http://localhost:3000/post?sender=Bob
 
-
 ###
 
-PUT http://localhost:3000/post/696123d9d42f01021a805756
+PUT http://localhost:3000/post/696fff7ee600df766246eb8d
 Content-Type: application/json
 
 {
