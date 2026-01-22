@@ -1,10 +1,13 @@
 ###
 
-PUT http://localhost:3000/comment/696fff7ee600df766246eb8d
+DELETE http://localhost:3000/comment/69727103af2af050bd7fb65b
+###
+
+PUT http://localhost:3000/comment/69727103af2af050bd7fb65b
 Content-Type: application/json
 
 {
-    "message": "Updated comment message!"
+    "message": "Updated comment message!!!"
 }
 ###
 

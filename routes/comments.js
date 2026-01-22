@@ -9,4 +9,7 @@ router.post('/', commentController.addComment);
 // update comment message only
 router.put('/:id', commentController.updateComment);
 
+// delete comment by id
+router.delete('/:id', commentController.deleteComment);
+
 module.exports = router;
