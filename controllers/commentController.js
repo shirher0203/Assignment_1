@@ -1,6 +1,26 @@
-
 const Comment = require('../models/Comment');
-const Post = require('../models/פost');
+const Post = require('../models/Post');
+
+// Update comment message only
+const updateComment = async (req, res) => {
+	const { id } = req.params;
+	const { message } = req.body;
+	try {
+		const updated = await Comment.findByIdAndUpdate(
+			id,
+			{ message },
+			{ new: true }
+		);
+		if (!updated) {
+			return res.status(404).json({ message: 'Comment not found' });
+		}
+		res.status(200).json(updated);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};
+
+
 
 
 // Create a new comment
@@ -19,4 +39,4 @@ const addComment = async (req, res) => {
 	}
 };
 
-module.exports = { addComment };
+module.exports = { addComment, updateComment };

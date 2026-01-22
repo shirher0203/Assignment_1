@@ -1,5 +1,13 @@
 ###
 
+PUT http://localhost:3000/comment/696fff7ee600df766246eb8d
+Content-Type: application/json
+
+{
+    "message": "Updated comment message!"
+}
+###
+
 POST http://localhost:3000/post
 Content-Type: application/json
 
