@@ -1,6 +1,9 @@
 ###
 
-DELETE http://localhost:3000/comment/69727103af2af050bd7fb65b
+GET http://localhost:3000/comment/697005d2e8bb13844630bf84
+###
+
+DELETE http://localhost:3000/comment/69727115af2af050bd7fb660
 ###
 
 PUT http://localhost:3000/comment/69727103af2af050bd7fb65b
