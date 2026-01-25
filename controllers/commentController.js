@@ -1,3 +1,16 @@
+const Comment = require('../models/Comment');
+const Post = require('../models/Post');
+
+// Get all comments by postId
+const getCommentsByPost = async (req, res) => {
+	const { postId } = req.params;
+	try {
+		const comments = await Comment.find({ postId });
+		res.status(200).json(comments);
+	} catch (error) {
+		res.status(400).json({ message: error.message });
+	}
+};
 // Get comment by id
 const getCommentById = async (req, res) => {
 	const { id } = req.params;
@@ -12,8 +25,7 @@ const getCommentById = async (req, res) => {
 	}
 };
 
-const Comment = require('../models/Comment');
-const Post = require('../models/Post');
+
 
 // Update comment message only
 const updateComment = async (req, res) => {
@@ -66,4 +78,10 @@ const deleteComment = async (req, res) => {
 
 
 
-module.exports = { addComment, updateComment, deleteComment, getCommentById };
+module.exports = { 
+    addComment,
+    updateComment,
+    deleteComment,
+    getCommentById,
+    getCommentsByPost 
+};
